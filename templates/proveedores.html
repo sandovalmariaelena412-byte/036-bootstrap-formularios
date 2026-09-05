@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block titulo %}Registro de Proveedores{% endblock %}
+
+{% block contenido %}
+
+<div class="row justify-content-center">
+  <div class="col-md-8">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h2 class="card-title mb-4">Registro de Proveedores</h2>
+
+        <form method="POST" action="{{ url_for('proveedores') }}">
+
+          <div class="mb-3">
+            <label for="empresa" class="form-label">Nombre de la empresa</label>
+            <input type="text" class="form-control" id="empresa" name="empresa" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="contacto" class="form-label">Persona de contacto</label>
+            <input type="text" class="form-control" id="contacto" name="contacto" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="nit" class="form-label">NIT</label>
+            <input type="text" class="form-control" id="nit" name="nit" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="tipo_producto" class="form-label">Tipo de producto/servicio</label>
+            <select class="form-select" id="tipo_producto" name="tipo_producto">
+              <option value="materia_prima">Materia prima</option>
+              <option value="tecnologia">Tecnologia</option>
+              <option value="servicios">Servicios profesionales</option>
+              <option value="logistica">Logistica y transporte</option>
+              <option value="otro">Otro</option>
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label d-block">Condicion de pago</label>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="condicion_pago" id="contado" value="contado" checked>
+              <label class="form-check-label" for="contado">Contado</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="condicion_pago" id="credito" value="credito">
+              <label class="form-check-label" for="credito">Credito</label>
+            </div>
+          </div>
+
+          <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="activo" name="activo">
+            <label class="form-check-label" for="activo">Proveedor activo</label>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Registrar Proveedor</button>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

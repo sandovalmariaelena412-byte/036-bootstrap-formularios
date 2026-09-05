@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block titulo %}Proveedor Registrado{% endblock %}
+
+{% block contenido %}
+
+<div class="row justify-content-center">
+  <div class="col-md-8">
+
+    <div class="alert alert-success" role="alert">
+      <strong>Proveedor recibido correctamente.</strong> Estos son los datos que enviaste:
+    </div>
+
+    <div class="alert alert-warning" role="alert">
+      Nota: estos datos <strong>no se estan guardando</strong> de forma permanente todavia
+      (no hay base de datos ni archivos en esta tarea). Solo se muestran como confirmacion.
+    </div>
+
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h5 class="card-title">Datos del Proveedor</h5>
+        <table class="table table-striped mt-3">
+          <tbody>
+            <tr>
+              <th>Empresa</th>
+              <td>{{ empresa }}</td>
+            </tr>
+            <tr>
+              <th>Contacto</th>
+              <td>{{ contacto }}</td>
+            </tr>
+            <tr>
+              <th>NIT</th>
+              <td>{{ nit }}</td>
+            </tr>
+            <tr>
+              <th>Tipo de producto/servicio</th>
+              <td>{{ tipo_producto }}</td>
+            </tr>
+            <tr>
+              <th>Condicion de pago</th>
+              <td>{{ condicion_pago }}</td>
+            </tr>
+            <tr>
+              <th>Proveedor activo</th>
+              <td>{{ activo }}</td>
+            </tr>
+          </tbody>
+        </table>
+        <a href="{{ url_for('proveedores') }}" class="btn btn-secondary">Registrar otro proveedor</a>
+        <a href="{{ url_for('inicio') }}" class="btn btn-outline-primary">Volver al inicio</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}
