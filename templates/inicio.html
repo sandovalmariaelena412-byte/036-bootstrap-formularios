@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block titulo %}Inicio - Mi Negocio{% endblock %}
+
+{% block contenido %}
+
+<!-- "Jumbotron" con clases de Bootstrap 5 (p-5, bg-light, rounded) -->
+<div class="p-5 mb-4 bg-light rounded-3">
+  <h1 class="display-5 fw-bold">Bienvenido a Mi Negocio</h1>
+  <p class="col-md-8 fs-4">
+    Este es un pequeno sitio construido con Flask y Bootstrap para practicar
+    formularios de negocio: registro de clientes, registro de proveedores, y
+    un inicio de sesion basico.
+  </p>
+</div>
+
+<!-- Fila de cards con el sistema de rejilla de Bootstrap -->
+<div class="row g-4">
+
+  <div class="col-md-4">
+    <div class="card h-100 shadow-sm">
+      <div class="card-body text-center">
+        <h5 class="card-title">Clientes</h5>
+        <p class="card-text">Registra la informacion de un nuevo cliente: nombre, NIT, correo, telefono y direccion.</p>
+        <a href="{{ url_for('clientes') }}" class="btn btn-primary">Ir a Clientes</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="card h-100 shadow-sm">
+      <div class="card-body text-center">
+        <h5 class="card-title">Proveedores</h5>
+        <p class="card-text">Registra la informacion de un proveedor: empresa, contacto, tipo de producto y condicion de pago.</p>
+        <a href="{{ url_for('proveedores') }}" class="btn btn-primary">Ir a Proveedores</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="card h-100 shadow-sm">
+      <div class="card-body text-center">
+        <h5 class="card-title">Login</h5>
+        <p class="card-text">Inicia sesion con un usuario de prueba para ver la validacion basica.</p>
+        <a href="{{ url_for('login') }}" class="btn btn-primary">Ir a Login</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}
