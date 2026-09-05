@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block titulo %}Cliente Registrado{% endblock %}
+
+{% block contenido %}
+
+<div class="row justify-content-center">
+  <div class="col-md-8">
+
+    <div class="alert alert-success" role="alert">
+      <strong>Cliente recibido correctamente.</strong> Estos son los datos que enviaste:
+    </div>
+
+    <div class="alert alert-warning" role="alert">
+      Nota: estos datos <strong>no se estan guardando</strong> de forma permanente todavia
+      (no hay base de datos ni archivos en esta tarea). Solo se muestran como confirmacion.
+    </div>
+
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h5 class="card-title">Datos del Cliente</h5>
+        <table class="table table-striped mt-3">
+          <tbody>
+            <tr>
+              <th>Nombre</th>
+              <td>{{ nombre }}</td>
+            </tr>
+            <tr>
+              <th>NIT</th>
+              <td>{{ nit }}</td>
+            </tr>
+            <tr>
+              <th>Correo</th>
+              <td>{{ correo }}</td>
+            </tr>
+            <tr>
+              <th>Telefono</th>
+              <td>{{ telefono }}</td>
+            </tr>
+            <tr>
+              <th>Direccion</th>
+              <td>{{ direccion }}</td>
+            </tr>
+          </tbody>
+        </table>
+        <a href="{{ url_for('clientes') }}" class="btn btn-secondary">Registrar otro cliente</a>
+        <a href="{{ url_for('inicio') }}" class="btn btn-outline-primary">Volver al inicio</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}
